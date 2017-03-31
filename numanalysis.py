@@ -13,11 +13,8 @@ def e(n):
 
 def eff_e(n):
     sum = 0
-    denom = 1
-    for i in range(n):
-        sum = sum + 1/denom
-        denom = denom * (denom + 1)
-    return sum
+    pass
 
-print(e(5))
+
 print(eff_e(5))
+print(e(4))
