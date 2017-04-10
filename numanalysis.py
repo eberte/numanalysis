@@ -11,7 +11,18 @@ def e(n):
     return sum
 
 
+'''
+4.5.4
+Everytime the factorial function is called, it's doing the factorial of a
+larger and larger number. The result is that every single time a factorial is
+called, it performs the previous factorial and then a little more
+'''
+
+
 def eff_e(n):
+    '''
+    Function 4.5.5
+    '''
     sum = 0
     factorial = 1
     counter = 1
@@ -23,7 +34,25 @@ def eff_e(n):
             sum = sum + 1/factorial
             factorial = factorial * counter
             counter += 1
-    return sum, factorial, counter
+    return sum
 
-print(eff_e(5))
-print(e(5))
+
+def leibniz():
+    sum = 0
+    i = 0
+    while math.pi - sum > 10 ** -6:
+        sum = sum + (-1) ** i / (2 * i + 1)
+        i += 1
+    pi = sum * 4
+    return pi
+
+
+def leib(x):
+    sum = 0
+    for i in range(x):
+        sum = sum + (-1) ** i / (2 * i + 1)
+    pi = 4 * sum
+    return pi
+
+
+print(leib(10000000))
