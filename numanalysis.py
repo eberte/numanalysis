@@ -40,7 +40,7 @@ def eff_e(n):
 def leibniz():
     sum = 0
     i = 0
-    while math.pi - sum > 10 ** -6:
+    while abs((-1) ** i / (2 * i + 1)) > 0.000001:
         sum = sum + (-1) ** i / (2 * i + 1)
         i += 1
     pi = sum * 4
@@ -55,4 +55,4 @@ def leib(x):
     return pi
 
 
-print(leib(10000000))
+print(leibniz())
