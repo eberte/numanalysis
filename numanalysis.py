@@ -38,6 +38,9 @@ def eff_e(n):
 
 
 def leibniz():
+    '''
+    4.5.6
+    '''
     sum = 0
     i = 0
     while abs((-1) ** i / (2 * i + 1)) > 0.000001:
@@ -55,4 +58,20 @@ def leib(x):
     return pi
 
 
-print(leibniz())
+def wallis(terms):
+    product = 0
+    if terms % 2 == 0:
+        for i in range(int(terms / 2)):
+            listTerms = []
+            listTerms.append((2 * (i + 1)) / (2 * i + 1))
+            listTerms.append((2 * (i + 1)) / (2 * i + 3))
+    else:
+        for i in range(int(terms / 2) + 1):
+            listTerms = []
+            listTerms.append((2 * (i + 1)) / (2 * i + 1))
+            listTerms.append((2 * (i + 1)) / (2 * i + 3))
+            del listTerms[2(terms / 2 + 1)]
+    return listTerms
+
+
+print(wallis(10))
