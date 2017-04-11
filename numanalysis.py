@@ -1,5 +1,5 @@
 import math
-
+# pg 166
 
 def e(n):
     '''
@@ -16,5 +16,31 @@ def eff_e(n):
     pass
 
 
-print(eff_e(5))
-print(e(4))
+def sqrt(n):
+    """Approximates the square root of n until |x| is small enough.
+
+    Parameters:
+        n: number to take the square root of
+
+    Return value:
+        the approximate square root of n
+    """
+    x = 1.0
+    k = 0
+    while abs(x - k) > 10 ** -15:
+        k = x
+        x = 0.5 * (x + n / x)
+    return x
+
+
+def approxPi(n):
+    x = 0.0
+    for i in range(n):
+        if i % 2 == 1:
+            x = x - (1 / (3**i * (1 + 2 * i)))
+        elif i % 2 == 0:
+            x = x + (1 / (3**i * (1 + 2 * i)))
+    return sqrt(12) * x
+
+
+print(approxPi(31))
