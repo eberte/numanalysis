@@ -50,14 +50,6 @@ def leibniz():
     return pi
 
 
-def leib(x):
-    sum = 0
-    for i in range(x):
-        sum = sum + (-1) ** i / (2 * i + 1)
-    pi = 4 * sum
-    return pi
-
-
 def wallis(terms):
     product = 1
     listTerms = []
@@ -74,6 +66,3 @@ def wallis(terms):
         product = product * listTerms[i]
     product = product * 2
     return product
-
-
-print(wallis(100))
