@@ -59,19 +59,21 @@ def leib(x):
 
 
 def wallis(terms):
-    product = 0
+    product = 1
+    listTerms = []
     if terms % 2 == 0:
         for i in range(int(terms / 2)):
-            listTerms = []
             listTerms.append((2 * (i + 1)) / (2 * i + 1))
             listTerms.append((2 * (i + 1)) / (2 * i + 3))
     else:
-        for i in range(int(terms / 2) + 1):
-            listTerms = []
+        for i in range(int((terms + 1) / 2)):
             listTerms.append((2 * (i + 1)) / (2 * i + 1))
             listTerms.append((2 * (i + 1)) / (2 * i + 3))
-            del listTerms[2(terms / 2 + 1)]
-    return listTerms
+        del listTerms[terms]
+    for i in range(terms):
+        product = product * listTerms[i]
+    product = product * 2
+    return product
 
 
-print(wallis(10))
+print(wallis(100))
