@@ -5,6 +5,13 @@ import math
 def e(n):
     '''
     Function 4.5.3
+    Description: approximates the value of the Euler number based on a
+    repeating fraction
+
+    Input: n, Int - the number of times the function iterates over the sum of
+    the fractions
+
+    Returns: sum, float - the approximation of the Euler number
     '''
     sum = 0
     for i in range(n):
@@ -23,6 +30,13 @@ called, it performs the previous factorial and then a little more
 def eff_e(n):
     '''
     Function 4.5.5
+    Description: Calculates an approximation of the Euler number without using
+    the math.factorial function
+
+    Input: n, Int -  the number of times the function iterates over the sum of
+    the fractions
+
+    Returns: e, float -  and approximation of the Euler number
     '''
     sum = 0
     factorial = 1
@@ -41,6 +55,12 @@ def eff_e(n):
 def leibniz():
     '''
     4.5.6
+    Description: Approximates the value of Pi up to the millionths place
+
+    Input: none
+
+    Returns: pi, Float -  an approximation of pi accurate to the millionths
+    place
     '''
     sum = 0
     i = 0
@@ -52,6 +72,15 @@ def leibniz():
 
 
 def wallis(terms):
+    '''
+    Description: approximates the value of pi by using the product of fractions
+    known as the Wallis product
+
+    Input: terms, int - the number of terms in the Wallis product that are multiplied
+    together
+
+    Returns: product, float -  an approximation of pi
+    '''
     product = 1
     listTerms = []
     if terms % 2 == 0:
@@ -63,7 +92,10 @@ def wallis(terms):
             listTerms.append((2 * (i + 1)) / (2 * i + 1))
             listTerms.append((2 * (i + 1)) / (2 * i + 3))
             del listTerms[2(terms / 2 + 1)]
-    return listTerms
+    for i in range(terms):
+        product = product * listTerms[i]
+    product = product * 2
+    return product
 
 
 def sqrt(n):
