@@ -21,6 +21,7 @@ def e(n):
 
 '''
 4.5.4
+
 Everytime the factorial function is called, it's doing the factorial of a
 larger and larger number. The result is that every single time a factorial is
 called, it performs the previous factorial and then a little more
@@ -171,6 +172,16 @@ def vieteHelp(terms):
 
 
 def viete(terms):
+    """
+    Approximates pi using the viete series with the number of terms
+    input buy user
+
+    Parameters:
+        terms: number of terms to use
+
+    Return value:
+        the approximate value of pi
+    """
     x = 1.0
     for i in range(terms):
         x = x * 2 / vieteHelp(i)
